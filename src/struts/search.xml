@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configeration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="search" namespace="/" extends="json-default">
+		<action name="index" class="">
+			<result name="success">index.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		<action name="search" class="com.action.search.SearchUserInfoByIdAction">
+			<result name="success">_show_search_result.jsp</result>
+			<result name="error">_search_empty.jsp</result>
+		</action>
+		<action name="searchCardByCondition" class="com.action.search.SearchCardByConditionAction">
+			<result name="success">_search_card_banding.jsp</result>
+			<result name="error">_search_empty.jsp</result>
+		</action>
+		<action name="searchSscardByCondition" class="com.action.search.SearchSscardByConditionAction">
+			<result name="success">_search_sscard_banding.jsp</result>
+			<result name="error">_search_empty.jsp</result>
+		</action>
+	</package>
+</struts>

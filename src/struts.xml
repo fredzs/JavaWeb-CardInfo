@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configeration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default" abstract="true">
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        </interceptors>      
+         
+        <!-- 当没有对应action时，返回404页面 -->
+        <default-action-ref name="404" />
+        <default-class-ref class="com.opensymphony.xwork2.ActionSupport" />
+
+        <global-exception-mappings>
+            <exception-mapping result="error" exception="java.lang.Exception" />
+        </global-exception-mappings>
+		
+		<action name="404">
+			<result>/error/404.jsp</result>
+		</action>
+		
+    </package>
+	<!-- 登录配置文件 -->
+	<include file="struts/search.xml" />
+	<include file="struts/show.xml" />
+	<include file="struts/cru.xml" />
+</struts>

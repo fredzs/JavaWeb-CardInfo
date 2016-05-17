@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-15 15:29:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.model.entity.TCardInfo" table="t_card_info" catalog="bj_medicalcard_test">
+    	<cache usage="read-write"/>
+    	
+        <id name="fdid" type="string">
+            <column name="fdid" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="cardno" type="string">
+            <column name="cardno" length="20" not-null="true" unique="true">
+                <comment>&#190;&#169;&#210;&#189;&#205;&#168;&#191;&#168;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="registryno" type="string">
+            <column name="registryno" length="20">
+                <comment>&#193;&#217;&#202;&#177;&#191;&#168;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="creatcardtime" type="timestamp">
+            <column name="creatcardtime" length="19" not-null="true">
+                <comment>&#189;&#168;&#191;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creatcardhospcode" type="string">
+            <column name="creatcardhospcode" length="32">
+                <comment>&#189;&#168;&#191;&#168;&#210;&#189;&#212;&#186;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="creatcardhospname" type="string">
+            <column name="creatcardhospname" length="50">
+                <comment>&#189;&#168;&#191;&#168;&#210;&#189;&#212;&#186;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="receivetime" type="timestamp">
+            <column name="receivetime" length="19" not-null="true">
+                <comment>&#193;&#236;&#191;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isblacklist" type="java.lang.Short">
+            <column name="isblacklist">
+                <comment>&#202;&#199;&#183;&#241;&#186;&#218;&#195;&#251;&#181;&#165;
+                0&#206;&#180;&#185;&#210;&#202;&#167;&#163;&#172;&#178;&#187;&#212;&#218;&#186;&#218;&#195;&#251;&#181;&#165; &#163;&#187;2
+                &#193;&#217;&#202;&#177;&#185;&#210;&#202;&#167;&#163;&#187;1&#213;&#253;&#202;&#189;&#185;&#210;&#202;&#167;&#163;&#187; 3
+                &#210;&#209;&#205;&#203;&#191;&#168;&#163;&#187;4&#210;&#209;&#182;&#179;&#189;&#225;&#163;&#187;</comment>
+            </column>
+        </property>
+        <property name="reportlosttime" type="timestamp">
+            <column name="reportlosttime" length="19" not-null="true">
+                <comment>&#185;&#210;&#202;&#167;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="cardtype" type="java.lang.Short">
+            <column name="cardtype">
+                <comment>
+                &#191;&#168;&#192;&#224;&#208;&#205;&#163;&#186;0&#193;&#217;&#202;&#177;&#191;&#168;1&#202;&#181;&#204;&#229;&#191;&#168;2&#193;&#217;&#202;&#177;&#201;&#231;&#177;&#163;&#191;&#168;3&#213;&#253;&#202;&#189;&#201;&#231;&#177;&#163;&#191;&#168;4&#206;&#222;&#208;&#167;&#193;&#217;&#202;&#177;&#201;&#231;&#177;&#163;&#191;&#168;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="512">
+                <comment>&#215;&#180;&#204;&#172;&#210;&#236;&#179;&#163;&#212;&#173;&#210;&#242;</comment>
+            </column>
+        </property>
+        <property name="balance" type="big_decimal">
+            <column name="balance" precision="8">
+                <comment>&#191;&#168;&#196;&#218;&#211;&#224;&#182;&#238;(&#206;&#180;&#202;&#185;&#211;&#195;)</comment>
+            </column>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="30">
+                <comment>&#179;&#214;&#191;&#168;&#200;&#203;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="idtype" type="string">
+            <column name="idtype" length="2">
+                <comment>&#179;&#214;&#191;&#168;&#200;&#203;&#214;&#164;&#188;&#254;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="32">
+                <comment>&#179;&#214;&#191;&#168;&#200;&#203;&#214;&#164;&#188;&#254;&#186;&#197;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="qrcode" type="string">
+            <column name="qrcode">
+                <comment>&#163;&#168;&#212;&#221;&#206;&#180;&#202;&#185;&#211;&#195;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="reportbacktime" type="timestamp">
+            <column name="reportbacktime" length="19">
+                <comment>&#205;&#203;&#191;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="32" not-null="true" />
+        </property>
+        <property name="openId" type="string">
+            <column name="openId" length="50" />
+        </property>
+        <property name="sscardno" type="string">
+            <column name="sscardno" length="15">
+                <comment>&#201;&#231;&#177;&#163;&#191;&#168;&#191;&#168;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="appUserid" type="string">
+            <column name="app_userid" length="32">
+                <comment>t_app_userinfo &#215;&#162;&#178;&#225;&#177;&#237;id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

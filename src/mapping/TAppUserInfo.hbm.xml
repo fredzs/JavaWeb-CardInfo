@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-15 15:29:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.model.entity.TAppUserInfo" table="t_app_user_info" catalog="bj_medicalcard_test">
+    	<cache usage="read-write"/>
+    	
+        <id name="id" type="string">
+            <column name="id" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="openId" type="string">
+            <column name="openId" length="50">
+                <comment>openId</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="64">
+                <comment>&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="64">
+                <comment>&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="15" unique="true">
+                <comment>&#202;&#214;&#187;&#250;&#186;&#197;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="idtype" type="string">
+            <column name="idtype" length="2">
+                <comment>&#214;&#164;&#188;&#254;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="32">
+                <comment>&#214;&#164;&#188;&#254;&#186;&#197;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="200">
+                <comment>&#211;&#195;&#187;&#167;&#205;&#183;&#207;&#241;(&#212;&#173;&#205;&#188;)</comment>
+            </column>
+        </property>
+        <property name="compressImage" type="string">
+            <column name="compress_image" length="200">
+                <comment>&#203;&#245;&#194;&#212;&#205;&#188;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status">
+                <comment>&#180;&#203;&#211;&#195;&#187;&#167;&#202;&#199;&#183;&#241;&#211;&#208;&#208;&#167; 1&#163;&#186;&#202;&#199; 2&#163;&#186;&#183;&#241;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" not-null="true" />
+        </property>
+        <property name="userChannel" type="java.lang.Integer">
+            <column name="user_channel">
+                <comment>&#211;&#195;&#187;&#167;&#215;&#162;&#178;&#225;&#199;&#254;&#181;&#192; 1.&#206;&#162;&#208;&#197;&#163;&#172;2.android 3.ios
+                4.app&#207;&#181;&#205;&#179;&#206;&#180;&#195;&#247;&#200;&#183;</comment>
+            </column>
+        </property>
+        <property name="authentication" type="java.lang.Integer">
+            <column name="authentication">
+                <comment>
+                &#202;&#181;&#195;&#251;&#200;&#207;&#214;&#164;&#177;&#234;&#202;&#182;&#163;&#186;0&#206;&#180;&#200;&#207;&#214;&#164;&#163;&#172;1&#210;&#209;&#200;&#207;&#214;&#164;2&#176;&#215;&#195;&#251;&#181;&#165;&#163;&#172;&#206;&#222;&#208;&#232;&#209;&#233;&#214;&#164;</comment>
+            </column>
+        </property>
+        <property name="authOpenid" type="string">
+            <column name="auth_openid" length="50">
+                <comment>&#202;&#181;&#195;&#251;&#200;&#207;&#214;&#164;&#202;&#177;&#181;&#196;openid</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

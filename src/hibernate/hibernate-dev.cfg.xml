@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<!-- Hibernate 连接数据库的基本信息 -->
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.connection.url">jdbc:mysql://172.16.100.150:3306/bj_medicalcard_prod</property>
+        <property name="hibernate.connection.username">kaifa</property>
+        
+        <!-- Hibernate 使用的数据库方言 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        <!-- 运行时是否打印 SQL -->
+        <property name="hibernate.show_sql">false</property>
+        
+        <!--C3P0配置 -->
+        <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.timeout">120</property>
+        <property name="automaticTestTable">Test</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.idle_test_period">120</property>
+        <property name="hibernate.c3p0.acquire_increment">2</property>
+        <property name="c3p0.testConnectionOnCheckout">true</property>
+        <property name="c3p0.idleConnectionTestPeriod">18000</property>
+        <property name="c3p0.maxIdleTime">25000</property>
+        <property name="c3p0.idle_test_period">120</property>
+        
+        <!-- 启用二级缓存 -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        
+        <!-- 配置使用的二级缓存的产品 -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.SingletonEhCacheProvider</property>
+        <property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>
+        
+        <!-- 配置启用查询缓存 -->
+        <property name="hibernate.cache.use_query_cache">true</property>
+        
+        <!-- 配置管理 Session 的方式 -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- 需要关联的 hibernate 映射文件 .hbm.xml -->
+        <mapping resource="mapping/TCardInfo.hbm.xml" />
+        <mapping resource="mapping/TAppUserInfo.hbm.xml" />
+        
+        <class-cache usage="read-write" class="com.model.entity.TCardInfo"/>
+        <class-cache usage="read-write" class="com.model.entity.TAppUserInfo"/>
+        
+    </session-factory>
+</hibernate-configuration>

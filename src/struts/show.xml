@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configeration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="show" namespace="/" extends="json-default">
+		<action name="cardIndex" class="com.action.ShowAllCardAction"  method="index">
+			<result name="success">card_index.jsp</result>
+			<result name="error">/error/500.jsp</result>
+		</action>
+		<action name="showAllEnvUserInfo" class="com.action.ShowUserInfoAction">
+			<result name="success">display_env_info.jsp</result>
+			<result name="error">/error/500.jsp</result>
+		</action>
+		<action name="showAllCardBandingInfo" class="com.action.ShowAllCardAction">
+			<result name="success">display_card_banding.jsp</result>
+			<result name="error">/error/500.jsp</result>
+		</action>
+		<action name="showAllSscardBandingInfo" class="com.action.ShowAllSscardAction">
+			<result name="success">display_sscard_banding.jsp</result>
+			<result name="error">/error/500.jsp</result>
+		</action>
+	</package>
+</struts>

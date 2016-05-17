@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-19 12:40:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.model.entity.SscardInfo" table="sscard_info" catalog="bj_medicalcard_info">
+    	<cache usage="read-write"/>
+    	
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="idNum" type="string">
+            <column name="idNum" length="100" />
+        </property>
+        <property name="sscardNum" type="string">
+            <column name="sscardNum" length="100" />
+        </property>
+        <property name="userName" type="string">
+            <column name="userName" length="100" />
+        </property>
+        <property name="sscardCondition" type="java.lang.Byte">
+            <column name="sscardCondition" />
+        </property>
+    </class>
+</hibernate-mapping>
